@@ -124,6 +124,15 @@ while True:
                     check_success = False
                     check_buy = False
                     check_fail = False
+            else:
+                fail_price = get_current_price(buy_ticker)
+                my_money = fail_price*(buy_total*0.9995*0.996) 
+                bot.sendMessage(ID, str(buy_date) + '_initialization...'+ '\n'
+                                    + "rest_money:" + str(my_money) + '\n'
+                                    + "test...ing")
+                check_success = False
+                check_buy = False
+                check_fail = False
         time.sleep(1)
     except Exception as e:
         print(e)
